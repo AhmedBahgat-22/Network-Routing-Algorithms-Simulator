@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ReceiverNode/ReceiverNode.vcxproj" Id="22b1b405-7503-40b1-b596-812edd5eef1a" />
+  <Project Path="RoutingSimulator/RoutingSimulator.vcxproj" Id="600848cc-11a0-4bf9-96f2-60df8bad04c1" />
+  <Project Path="SenderNode/SenderNode.vcxproj" Id="b3fbf051-3ab0-43cd-9ef2-d713b7a5304f" />
+</Solution>

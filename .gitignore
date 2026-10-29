@@ -1,0 +1,18 @@
+# Visual Studio build and machine-specific files
+.vs/
+**/Debug/
+**/Release/
+**/x64/
+**/x86/
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.ipch
+*.tlog
+*.lastbuildstate
+*.vcxproj.user
+*.slnLaunch.user
+# Keep supplied example input/output images and documentation tracked.
+
+received_test.jpg
