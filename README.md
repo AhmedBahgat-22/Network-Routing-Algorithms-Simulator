@@ -11,7 +11,7 @@
 [![IDE](https://img.shields.io/badge/IDE-Visual%20Studio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white)](https://visualstudio.microsoft.com/)
 [![Networking](https://img.shields.io/badge/Networking-TCP%20%2F%20Winsock2-172B4D?style=for-the-badge)](#tcp-transfer-pipeline)
 
-[**Overview**](#overview) · [**Architecture**](#architecture) · [**Algorithms**](#routing-algorithms) · [**Quick Start**](#quick-start) · [**Verification**](#verified-results) · [**Documentation**](#documentation)
+[**Overview**](#overview) · [**Architecture**](#architecture) · [**Algorithms**](#routing-algorithms) · [**Quick Start**](#quick-start) · [**Verification**](#verified-results) · [**Screenshots**](#live-demo--screenshots) · [**Documentation**](#documentation)
 
 </div>
 
@@ -165,6 +165,28 @@ Get-ChildItem -Recurse -File |
 > [!NOTE]
 > This verifies **one end-to-end local file-transfer test**. It does not establish routing-algorithm correctness over arbitrary topologies, production reliability, high-load throughput, or performance superiority.
 
+## Live demo & screenshots
+
+Real console captures from the **29 October 2026** Windows Debug/x64 transfer test. The three applications run locally and demonstrate a successful 6,480-byte file transfer; **these screenshots do not represent a dynamic multi-router deployment**.
+
+### 01 — SenderNode | Image transmission
+
+![SenderNode console showing test.jpg sent successfully and progress at 100 percent](docs/screenshots/sender-node.png)
+
+*The sender opens `test.jpg`, connects to the software router on port `8000`, and reports successful transmission.*
+
+### 02 — SoftwareRouter | Buffered TCP forwarding
+
+![SoftwareRouter console showing input stream, circular buffer, and transfer completion](docs/screenshots/software-router.png)
+
+*The router handles the incoming file stream and forwards it to the receiver; Cortex-M4 information displayed in the console is simulated.*
+
+### 03 — ReceiverNode | Successful reception
+
+![ReceiverNode console showing received_test.jpg saved successfully](docs/screenshots/receiver-node.png)
+
+*The receiver reports 100% completion and saves `received_test.jpg` (6,480 bytes). The SHA-256 values match those of the original test image, as documented above.*
+
 ## Repository structure
 
 ```text
@@ -175,6 +197,11 @@ Network-Routing-Algorithms-Simulator/
 ├── REVIEW_NOTES.md
 ├── UML_Diagram.png
 ├── .gitignore
+├── docs/
+│   └── screenshots/
+│       ├── sender-node.png
+│       ├── software-router.png
+│       └── receiver-node.png
 └── RoutingSimulator/
     ├── RoutingSimulator.slnx
     ├── TransferProtocol.h
